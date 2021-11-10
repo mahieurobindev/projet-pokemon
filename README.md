@@ -1,2 +1,2 @@
 # projet-pokemon
-DEV A -> Valentin Hippolyte
+DEV A -> Valentin HIPPOLYTE
