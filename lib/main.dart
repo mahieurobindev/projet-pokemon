@@ -34,22 +34,24 @@ class MyStatefulWidget extends StatefulWidget {
   State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
 
+
 /// This is the private State class that goes with MyStatefulWidget.
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 1;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Boutique',
+  static final List<Widget> _widgetOptions = <Widget>[
+    const Text(
+      'Ici, la liste des pokemons à acheter (la Boutique)',
+      style: TextStyle(fontFamily: 'Montserrat', fontSize: 24),
+    ),
+    const Text(
+      'La page d\'accueil ou on peut générer de l\'argent',
       style: optionStyle,
     ),
-    Text(
-      'Index 1: Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: Monpokemon',
+    Image.asset('assets/images/pokemon.png'),
+    const Text(
+      'Ici, on peut voir notre pokemon',
       style: optionStyle,
     ),
   ];
