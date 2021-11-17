@@ -91,7 +91,7 @@ flutter:
 assets: 
   - assets/images/pokemon.png
 
-# fonts: 
-#   - family: Montserrat
-#   - asset: assets/fonts/Montserrat.ttf
+fonts: 
+  - family: Montserrat
+  - asset: assets/fonts/Montserrat.ttf
 
