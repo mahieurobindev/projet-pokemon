@@ -88,5 +88,9 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 
-  assets:
-    - assets/images/pokemon.png
+assets:
+  - assets/images/pokemon.png
+  
+fonts: 
+  - family: Montserrat
+  - asset: assets/fonts/Montserrat.ttf

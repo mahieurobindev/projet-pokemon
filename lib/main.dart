@@ -39,18 +39,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 1;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
+  static final List<Widget> _widgetOptions = <Widget>[
+    const Text(
       'Index 0: Boutique',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: Monpokemon',
-      style: optionStyle,
+      style: TextStyle(fontFamily: 'Montserrat', fontSize: 24),
+    ), 
+      Image.asset("assets/images/pokemon.png"),
+    const Text(
+      'Index 2: Mon pokemon',
+      style: TextStyle(fontFamily: 'Montserrat', fontSize: 24),
     ),
   ];
 
@@ -66,10 +63,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       appBar: AppBar(
         title: const Text('BottomNavigationBar Sample'),
       ),
-      body: Image.asset('assets/images/pokemon.png'),
-      // body: Center(
-      //   child: _widgetOptions.elementAt(_selectedIndex),
-      // ),
+      
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
