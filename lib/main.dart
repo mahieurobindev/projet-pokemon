@@ -9,6 +9,10 @@
 
 import 'package:flutter/material.dart';
 
+import 'boutique/boutique.dart';
+import 'home/home.dart';
+import 'monPokemon/monPokemon.dart';
+
 void main() => runApp(const MyApp());
 
 /// This is the main application widget.
@@ -16,6 +20,8 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   static const String _title = 'Flutter Code Sample';
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +31,8 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+ const tab = [Boutique(), Home(), MonPokemon()];
 
 /// This is the stateful widget that the main application instantiates.
 class MyStatefulWidget extends StatefulWidget {
@@ -40,22 +48,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 1;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static final List<Widget> _widgetOptions = <Widget>[
-    const Text(
-      'Ici, la liste des pokemons à acheter (la Boutique)',
-      style: TextStyle(fontFamily: 'Montserrat', fontSize: 24),
-    ),
-    const Text(
-      'La page d\'accueil ou on peut générer de l\'argent',
-      style: optionStyle,
-    ),
-    Image.asset('assets/images/pokemon.png'),
-    const Text(
-      'Ici, on peut voir notre pokemon',
-      style: optionStyle,
-    ),
-  ];
-
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -70,7 +62,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       ),
       
       body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+        child: tab[_selectedIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
