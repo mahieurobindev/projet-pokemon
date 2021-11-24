@@ -44,10 +44,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       'Index 0: Boutique',
       style: TextStyle(fontFamily: 'Montserrat', fontSize: 24),
     ), 
-      Image.asset("assets/images/pokemon.png"),
+      Image.asset("images/pokemon.png"),
     const Text(
       'Index 2: Mon pokemon',
-      style: TextStyle(fontFamily: 'Montserrat', fontSize: 24),
+      style: optionStyle,
     ),
   ];
 
