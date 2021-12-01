@@ -21,8 +21,6 @@ class MyApp extends StatelessWidget {
 
   static const String _title = 'Flutter Code Sample';
 
-  
-
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
@@ -32,7 +30,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
- const tab = [Boutique(), Home(), MonPokemon()];
+const tab = [Boutique(), Home(), MonPokemon()];
 
 /// This is the stateful widget that the main application instantiates.
 class MyStatefulWidget extends StatefulWidget {
@@ -41,7 +39,6 @@ class MyStatefulWidget extends StatefulWidget {
   @override
   State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
-
 
 /// This is the private State class that goes with MyStatefulWidget.
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
@@ -58,9 +55,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
+        title: const Text('Accueil'),
       ),
-      
       body: Center(
         child: tab[_selectedIndex],
       ),
