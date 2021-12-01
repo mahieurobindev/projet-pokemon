@@ -8,15 +8,13 @@ class Boutique extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-
-    final Dio dio =ref.read(dioProvider);
+    final Dio dio = ref.read(dioProvider);
     final Future<Response> future = dio.get("https://pokeapi.co/api/v2/");
 
-    future.then((Response value) =>{
-      print(value.statusCode)
-    })
-    .catchError((onError){
-      print("impossible re récupérer le pokemon");
+    future
+        .then((Response value) => {print(value.statusCode)})
+        .catchError((onError) {
+      print("impossible de récupérer le pokemon");
     });
     return Container(
       child: const Text('Boutique'),
