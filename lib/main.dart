@@ -8,6 +8,7 @@
 // and displays a corresponding message in the center of the [Scaffold].
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'boutique/boutique.dart';
 import 'home/home.dart';
@@ -23,9 +24,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  const MaterialApp(
       title: _title,
-      home: MyStatefulWidget(),
+      home: ProviderScope(child: MyStatefulWidget()),
     );
   }
 }
