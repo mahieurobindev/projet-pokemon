@@ -43,12 +43,14 @@ class MyStatefulWidget extends StatefulWidget {
 
 /// This is the private State class that goes with MyStatefulWidget.
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  int _counter = 0;
   int _selectedIndex = 1;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      _counter ++;
     });
   }
 
@@ -56,7 +58,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Accueil'),
+        title: Column(
+        children: <Widget>[
+        const Text('Pokeymoney : ',
+        ),
+        Text(
+          '$_counter',
+        ),
+        ],
+      ),
       ),
       body: Center(
         child: tab[_selectedIndex],

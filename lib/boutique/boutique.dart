@@ -23,8 +23,9 @@ class Boutique extends ConsumerWidget {
     .catchError((onError){
       print("impossible de récupérer le pokemon");
     });
+
     return Container(
-      child: const Text('Boutique'),
+      child: const Text("pokemon.name"),
     );
   }
 }
