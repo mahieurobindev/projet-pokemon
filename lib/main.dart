@@ -9,10 +9,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import 'boutique/boutique.dart';
-import 'home/home.dart';
-import 'monPokemon/monPokemon.dart';
+import 'package:pokemonflutter/widgets/routes/home/home.dart';
 
 void main() => runApp(const MyApp());
 
@@ -24,72 +21,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const MaterialApp(
+    return  MaterialApp(
       title: _title,
-      home: ProviderScope(child: MyStatefulWidget()),
-    );
-  }
-}
-
-const tab = [Boutique(), Home(), MonPokemon()];
-
-/// This is the stateful widget that the main application instantiates.
-class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({Key? key}) : super(key: key);
-
-  @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
-}
-
-/// This is the private State class that goes with MyStatefulWidget.
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  int _counter = 0;
-  int _selectedIndex = 1;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-      _counter ++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Column(
-        children: <Widget>[
-        const Text('Pokeymoney : ',
-        ),
-        Text(
-          '$_counter',
-        ),
-        ],
-      ),
-      ),
-      body: Center(
-        child: tab[_selectedIndex],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.storefront),
-            label: 'Boutique',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.catching_pokemon_rounded),
-            label: 'Mon Pokemon',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
-      ),
+      home: ProviderScope(child: HomeRoute()),
     );
   }
 }
