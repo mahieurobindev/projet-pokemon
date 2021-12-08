@@ -3,18 +3,22 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pokemonflutter/providers/home.state.dart';
 import 'package:pokemonflutter/widgets/routes/home/local_widgets/home_appbar.dart';
 import 'package:pokemonflutter/widgets/routes/home/local_widgets/home_bottombar.dart';
+import 'package:pokemonflutter/widgets/routes/home/local_widgets/monPokemon/monPokemon.dart';
+
+import 'local_widgets/boutique/boutique.dart';
+import 'local_widgets/home/home.dart';
 
 class HomeRoute extends ConsumerWidget {
   HomeRoute({ Key? key }) : super(key: key);
 
-  final tabs = [Text('1'), Text('2'), Text('3')];
+  final tabs = [const Boutique(), const Home(), const MonPokemon()];
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: HomeAppBar(),
+      appBar: const HomeAppBar(),
       body: tabs[ref.watch(homeStateProvider).currentTab],
-      bottomNavigationBar: HomeBottomBar(),
+      bottomNavigationBar: const HomeBottomBar(),
     );
   }
 }
