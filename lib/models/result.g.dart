@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'move.dart';
+part of 'result.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Move _$MoveFromJson(Map<String, dynamic> json) => Move(
+Result _$ResultFromJson(Map<String, dynamic> json) => Result(
       json['name'] as String?,
       json['url'] as String?,
     );
 
-Map<String, dynamic> _$MoveToJson(Move instance) => <String, dynamic>{
+Map<String, dynamic> _$ResultToJson(Result instance) => <String, dynamic>{
       'name': instance.name,
       'url': instance.url,
     };
