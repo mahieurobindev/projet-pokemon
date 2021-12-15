@@ -9,12 +9,8 @@ class MonPokemon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         alignment: Alignment.center,
-          //conteneur mon pokémon
-          child: Container(
-            height: 300,
-            width: 500,
-             color: Colors.grey
-             ),
-        color: Colors.blue[600]);
+        //conteneur mon pokémon
+        child: Container(height: 300, width: 500, color: Colors.grey),
+        color: Color.fromARGB(255, 254, 255, 255));
   }
 }
