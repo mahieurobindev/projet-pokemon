@@ -5,9 +5,9 @@ import 'package:pokemonflutter/models/result.dart';
 import 'package:pokemonflutter/providers/list_pokemon.provider.dart';
 
 class Boutique extends ConsumerWidget {
-  const Boutique({Key? key,
+  const Boutique({
+    Key? key,
   }) : super(key: key);
-
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -43,32 +43,25 @@ class _OnePokemon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
-        alignment: Alignment.center,
-        child: Padding(
-          padding: const EdgeInsets.all(2.0),
-          child: Container(
-            //----- 
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.grey[200],
-            ),
-            width: MediaQuery.of(context).size.width * 0.25,
-            height: MediaQuery.of(context).size.width * 0.45,
+      //-----
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.grey[200],
+      ),
+      width: MediaQuery.of(context).size.width / 2,
+      height: MediaQuery.of(context).size.width * 0.45,
+      child: Column(
+        children: [
+          Image.asset('images/icon.png'),
+          Expanded(
             child: Column(
               children: [
-                Expanded(child: Image.asset('images/icon.png')),
-                Expanded(
-                  child: Column(
-                    children:  [
-                      Expanded(child: Text(pokemon.name!)),
-                    ],
-                  ),
-                )
+                Expanded(child: Text(pokemon.name!)),
               ],
             ),
-          ),
-        ),
+          )
+        ],
+      ),
     );
   }
 }
