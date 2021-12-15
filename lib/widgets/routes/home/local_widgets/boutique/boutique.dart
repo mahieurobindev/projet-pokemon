@@ -29,8 +29,15 @@ class Boutique extends ConsumerWidget {
   Widget _data(AsyncData<GetListPokemonResponse?> data) {
     final GetListPokemonResponse? value = data.value;
 
-    return Wrap(
-      children: value!.results!.map((e) => _OnePokemon(pokemon: e)).toList(),
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SingleChildScrollView(
+          child: Wrap(
+            children: value!.results!.map((e) => _OnePokemon(pokemon: e)).toList(),
+          ),
+        ),
+      ),
     );
   }
 }
@@ -42,25 +49,28 @@ class _OnePokemon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      //-----
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.grey[200],
-      ),
-      width: MediaQuery.of(context).size.width / 2,
-      height: MediaQuery.of(context).size.width * 0.45,
-      child: Column(
-        children: [
-          Image.asset('images/icon.png'),
-          Expanded(
-            child: Column(
-              children: [
-                Expanded(child: Text(pokemon.name!)),
-              ],
-            ),
-          )
-        ],
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        //-----
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.grey[200],
+        ),
+        width: MediaQuery.of(context).size.width * 0.40,
+        height: MediaQuery.of(context).size.width * 0.45,
+        child: Column(
+          children: [
+            Image.asset('images/icon.png'),
+            Expanded(
+              child: Column(
+                children: [
+                  Expanded(child: Text(pokemon.name!)),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
