@@ -14,6 +14,7 @@ class MonPokemon extends StatelessWidget {
             height: 300,
             width: 500,
              color: Colors.grey
+             child: Row,
              ),
         color: Colors.blue[600]);
   }
