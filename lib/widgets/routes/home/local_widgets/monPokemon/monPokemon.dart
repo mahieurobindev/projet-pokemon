@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 class MonPokemon extends StatelessWidget {
@@ -6,9 +8,15 @@ class MonPokemon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.center,
       child: const Text(
-        'Mon Pokebiiiite',
-      style:TextStyle(fontFamily: 'Montserrat', fontSize:54),
-    ));
+        'Mon Pokebite',
+      style:TextStyle(fontFamily: 'Montserrat', fontSize:54, color: (Colors.white)),
+      
+      textAlign: TextAlign.center,
+      
+    ),
+    color: Colors.blue[600]);
+    
   }
 }

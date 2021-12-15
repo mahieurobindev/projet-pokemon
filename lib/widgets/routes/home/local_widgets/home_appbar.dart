@@ -9,12 +9,17 @@ class HomeAppBar extends ConsumerWidget implements PreferredSizeWidget{
   @override
   Widget build(BuildContext context, WidgetRef ref) {
       return  Container(
-        color: Colors.red,
+        height: 80,
+        color: Color.fromARGB(255, 32, 122, 206),
         child: Row(
             children: <Widget>[
               const Text('Pokeymoney : ',
+              style:TextStyle(fontFamily: 'Montserrat', fontSize:20, color: (Colors.white)),
               ),
-              Text(ref.watch(appStateProvider).pokemoney.toString()),
+              Text(ref.watch(appStateProvider).pokemoney.toString(),
+              style:TextStyle(fontFamily: 'Montserrat', fontSize:20, color: (Colors.white)),
+              ),
+
             ],
           ),
       )
