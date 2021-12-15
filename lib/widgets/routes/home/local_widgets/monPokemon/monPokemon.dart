@@ -8,15 +8,13 @@ class MonPokemon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.center,
-      child: const Text(
-        'Mon Pokebite',
-      style:TextStyle(fontFamily: 'Montserrat', fontSize:54, color: (Colors.white)),
-      
-      textAlign: TextAlign.center,
-      
-    ),
-    color: Colors.blue[600]);
-    
+        alignment: Alignment.center,
+          //conteneur mon pokémon
+          child: Container(
+            height: 300,
+            width: 500,
+             color: Colors.grey
+             ),
+        color: Colors.blue[600]);
   }
 }
