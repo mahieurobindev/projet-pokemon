@@ -1,15 +1,13 @@
-import 'dart:convert';
-
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pokemonflutter/models/get_list_pokemon.dart';
 import 'package:pokemonflutter/models/result.dart';
-import 'package:pokemonflutter/providers/dio.dart';
 import 'package:pokemonflutter/providers/list_pokemon.provider.dart';
 
 class Boutique extends ConsumerWidget {
-  const Boutique({Key? key}) : super(key: key);
+  const Boutique({Key? key,
+  }) : super(key: key);
+
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -23,7 +21,9 @@ class Boutique extends ConsumerWidget {
   }
 
   Widget _loading(AsyncLoading<GetListPokemonResponse?> loading) {
-    return CircularProgressIndicator();
+    return Center(
+      child: CircularProgressIndicator(),
+    );
   }
 
   Widget _data(AsyncData<GetListPokemonResponse?> data) {
@@ -42,6 +42,33 @@ class _OnePokemon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      
+        alignment: Alignment.center,
+        child: Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: Container(
+            //----- 
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.grey[200],
+            ),
+            width: MediaQuery.of(context).size.width * 0.25,
+            height: MediaQuery.of(context).size.width * 0.45,
+            child: Column(
+              children: [
+                Expanded(child: Image.asset('images/icon.png')),
+                Expanded(
+                  child: Column(
+                    children:  [
+                      Expanded(child: Text(pokemon.name!)),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+    );
   }
 }
