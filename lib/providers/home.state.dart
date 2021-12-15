@@ -16,7 +16,6 @@ class HomeStateNotifier extends StateNotifier<HomeState> {
 
 }
 
-
 class HomeState {
-  int currentTab = 0;
+  int currentTab = 1;
 }

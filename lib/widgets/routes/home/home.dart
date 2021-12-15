@@ -5,7 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pokemonflutter/providers/home.state.dart';
 import 'package:pokemonflutter/widgets/routes/home/local_widgets/home_appbar.dart';
 import 'package:pokemonflutter/widgets/routes/home/local_widgets/home_bottombar.dart';
-import 'package:pokemonflutter/widgets/routes/home/local_widgets/monPokemon/monPokemon.dart';
+import 'package:pokemonflutter/widgets/routes/home/local_widgets/monPokemon/mon_pokemon.dart';
 
 import 'local_widgets/boutique/boutique.dart';
 import 'local_widgets/home/home.dart';
