@@ -1,7 +1,6 @@
 
 
 import 'package:json_annotation/json_annotation.dart';
-import 'package:pokemonflutter/models/get_list_pokemon.dart';
 
 part 'result.g.dart';
 

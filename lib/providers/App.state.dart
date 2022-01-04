@@ -12,6 +12,12 @@ class AppStateNotifier extends StateNotifier<AppState> {
     newState.pokemoney = state.pokemoney +1;
     state = newState;
   }
+
+  void acheter(){
+    var newState = AppState();
+    newState.pokemoney = state.pokemoney - 10;
+    state = newState;
+  }
   void buy(){
     var newState = AppState();
     newState.pokemoney = state.pokemoney - 10;

@@ -4,6 +4,8 @@ import 'package:pokemonflutter/models/get_list_pokemon.dart';
 import 'package:pokemonflutter/models/result.dart';
 import 'package:pokemonflutter/providers/list_pokemon.provider.dart';
 
+import '../../../../../providers/App.state.dart';
+
 class Boutique extends ConsumerWidget {
   const Boutique({
     Key? key,
@@ -42,13 +44,13 @@ class Boutique extends ConsumerWidget {
   }
 }
 
-class _OnePokemon extends StatelessWidget {
+class _OnePokemon extends ConsumerWidget {
   const _OnePokemon({Key? key, required this.pokemon}) : super(key: key);
 
   final Result pokemon;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref ) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
@@ -57,18 +59,29 @@ class _OnePokemon extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           color: Colors.grey[200],
         ),
-        width: MediaQuery.of(context).size.width * 0.40,
-        height: MediaQuery.of(context).size.width * 0.45,
+        width: MediaQuery.of(context).size.width * 0.20,
+        height: MediaQuery.of(context).size.width * 0.25,
         child: Column(
           children: [
-            Image.asset('images/icon.png'),
+            Image.asset('images/pikachu.png'),
             Expanded(
               child: Column(
                 children: [
                   Expanded(child: Text(pokemon.name!)),
+                  Expanded(child: MaterialButton(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                    side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
+                onPressed: () {ref.read(appStateProvider.notifier).acheter();},
+                padding: EdgeInsets.all(10.0),
+                color: Color.fromRGBO(0, 160, 227, 1),
+                textColor: Colors.white,
+                child: Text("Acheter",
+                    style: TextStyle(fontSize: 15)),
+              ),)
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
