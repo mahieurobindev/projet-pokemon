@@ -11,12 +11,12 @@ class Home extends ConsumerWidget {
         body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(
-                "images/background.jpg"),
+              image: NetworkImage(
+                "https://i.goopics.net/lwbhim.jpg"),
               fit: BoxFit.cover,
-              ),
+              )
             ),
-          //  child: Image.asset('images/pokemon.png'),
+          // child: Image.asset('images/pokemon.png')
           ),
         floatingActionButton: Center(child: FloatingActionButton(
         onPressed: (){
