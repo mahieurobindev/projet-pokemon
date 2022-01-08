@@ -107,6 +107,7 @@ flutter:
 assets: 
   - assets/images/pokemon.png
   - assets/images/pikachu.png
+  - assets/images/pokeball.png
 
 
 fonts: 

@@ -58,30 +58,50 @@ class _OnePokemon extends ConsumerWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Colors.grey[200],
-        ),
-        width: MediaQuery.of(context).size.width * 0.20,
-        height: MediaQuery.of(context).size.width * 0.25,
+          border: Border.all(
+                    color: Colors.black,
+                    width: 1,
+        )),
+        width: MediaQuery.of(context).size.width * 0.40,
+        height: MediaQuery.of(context).size.height * 0.30,
         child: Column(
           children: [
-            Image.asset('images/pikachu.png'),
             Expanded(
-              child: Column(
-                children: [
-                  Expanded(child: Text(pokemon.name!)),
-                  Expanded(child: MaterialButton(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18.0),
-                    side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
-                onPressed: () {ref.read(appStateProvider.notifier).acheter();},
-                padding: EdgeInsets.all(10.0),
-                color: Color.fromRGBO(0, 160, 227, 1),
-                textColor: Colors.white,
-                child: Text("Acheter",
-                    style: TextStyle(fontSize: 15)),
-              ),)
-                ],
-              ),
-            ),
+              child: Padding(
+                padding: EdgeInsets.only(top: 10),
+                child: Text(pokemon.name!,
+              style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20, fontFamily: 'Montserrat'),
+            ))),
+            Image.asset('images/pokeball.png',
+            width: 100,
+            height: 100),
+            // Expanded(
+              // child: Column(
+                // children: [
+                  Expanded(child:Container(
+                    height: 150.0,
+                    margin: const EdgeInsets.only(top:20.0, bottom: 20.0),
+                    child: ButtonTheme(
+                      height: 150.0,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18.0),
+                        side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
+                      child:MaterialButton(
+                        onPressed: () {ref.read(appStateProvider.notifier).acheter();},
+                        padding: EdgeInsets.all(0),
+                        
+                        color: Color.fromARGB(255, 15, 156, 238),
+                        textColor: Colors.white,
+                        child: Text("Acheter",
+                            style: TextStyle(fontSize: 15)),
+                      )
+                    
+                  ),)
+                  ) 
+                  
+                // ],
+              // ),
+            // ),
           ],
         ),
       ),
