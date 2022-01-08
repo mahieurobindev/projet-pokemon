@@ -8,7 +8,16 @@ class Home extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-        body: Center(child: Image.asset('images/pokemon.png')),
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                "images/background.jpg"),
+              fit: BoxFit.cover,
+              ),
+            ),
+          //  child: Image.asset('images/pokemon.png'),
+          ),
         floatingActionButton: Center(child: FloatingActionButton(
         onPressed: (){
           ref.read(appStateProvider.notifier).increment();
