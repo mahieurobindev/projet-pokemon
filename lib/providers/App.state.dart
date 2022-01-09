@@ -1,3 +1,4 @@
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final appStateProvider = StateNotifierProvider<AppStateNotifier, AppState>((ref) {
@@ -7,6 +8,8 @@ final appStateProvider = StateNotifierProvider<AppStateNotifier, AppState>((ref)
 class AppStateNotifier extends StateNotifier<AppState> {
   AppStateNotifier() : super(AppState());
 
+  get context => null;
+
   void increment(){
     var newState = AppState();
     newState.pokemoney = state.pokemoney +1;
@@ -15,14 +18,18 @@ class AppStateNotifier extends StateNotifier<AppState> {
 
   void acheter(){
     var newState = AppState();
-    newState.pokemoney = state.pokemoney - 10;
-    state = newState;
+    if(state.pokemoney >= 10){
+      newState.pokemoney = state.pokemoney - 10;
+      state = newState;
+    }
   }
-  void buy(){
-    var newState = AppState();
-    newState.pokemoney = state.pokemoney - 10;
-    state = newState;
-  }
+  // void buy(){
+  //   var newState = AppState();
+  //   newState.pokemoney = state.pokemoney - 10;
+  //   state = newState;
+  // }
+   
+
 }
 
 

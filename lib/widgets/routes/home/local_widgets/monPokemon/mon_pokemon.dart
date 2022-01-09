@@ -5,36 +5,34 @@ class MonPokemon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-            //conteneur mon pokémon
-        alignment: Alignment.center,
-        child: Padding(
-          padding: const EdgeInsets.all(2.0),
-          child: Container(
-            //----- 
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.grey[200],
-            ),
-            width: MediaQuery.of(context).size.width * 0.50,
-            height: MediaQuery.of(context).size.width * 0.75,
-           
-            child: Column(
-              children: [
-                Expanded(child: Image.asset('images/icon.png')),
-                Expanded(
-                  child: Column(
-                    children: const [
-                      Expanded(child: Text('ID')),
-                      Expanded(child: Text('NOM')),
-                      Expanded(child: Text('TYPE')),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
+    return Center (
+      child:Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.grey[200],
+          border: Border.all(
+                    color: Colors.black,
+                    width: 1,
+        )),
+        width: MediaQuery.of(context).size.width * 0.40,
+        height: MediaQuery.of(context).size.height * 0.30,
+        child: Column(
+          children: [
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.only(top: 10),
+                child: Text("Pikachu",
+              style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 20, fontFamily: 'Montserrat'),
+            ))),
+            Expanded(
+              child: Image.asset('images/pikachu.png',
+              width: 100,
+             height: 100)
+            )
+            
+          ],
         ),
-        color: Colors.white);
+      )
+      );
   }
 }

@@ -87,7 +87,38 @@ class _OnePokemon extends ConsumerWidget {
                         borderRadius: BorderRadius.circular(18.0),
                         side: BorderSide(color: Color.fromRGBO(0, 160, 227, 1))),
                       child:MaterialButton(
-                        onPressed: () {ref.read(appStateProvider.notifier).acheter();},
+                        onPressed: () {
+                          if(ref.watch(appStateProvider).pokemoney > 9){
+                            showDialog(context: context, builder: (contect)=>AlertDialog(
+                            title: Text('Achat effectué'),
+                            content: Text("Vous venez d'acheter un Pokemon"),
+                            actions: [
+                              TextButton(
+                                onPressed: (){
+                                  Navigator.pop(context);
+                                },
+                                child: Text("ok"),)  
+                            ],
+
+                          ));
+                          ref.read(appStateProvider.notifier).acheter();
+                          }
+                          else{
+                             showDialog(context: context, builder: (contect)=>AlertDialog(
+                            title: Text('Achat impossible'),
+                            content: Text("Vous N'avez pas assez de pokemoney, un minimum de 10 unités est suggéré."),
+                            actions: [
+                              TextButton(
+                                onPressed: (){
+                                  Navigator.pop(context);
+                                },
+                                child: Text("ok"),)  
+                            ],
+
+                          ));
+                          }
+                          
+                        },
                         padding: EdgeInsets.all(0),
                         
                         color: Color.fromARGB(255, 15, 156, 238),

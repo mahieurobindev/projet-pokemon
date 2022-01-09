@@ -12,7 +12,7 @@ class Home extends ConsumerWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: NetworkImage(
-                "https://i.goopics.net/lwbhim.jpg"),
+                "https://i.goopics.net/k93r6u.jpg"),
               fit: BoxFit.cover,
               )
             ),
