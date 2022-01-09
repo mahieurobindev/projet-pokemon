@@ -19,7 +19,7 @@ class Boutique extends ConsumerWidget {
   }
 
   Widget _error(AsyncError<GetListPokemonResponse?> error) {
-    return Text('Impossible de charger les pokemons');
+    return Text('Impossible de charger les pokémons');
   }
 
   Widget _loading(AsyncLoading<GetListPokemonResponse?> loading) {
@@ -91,7 +91,7 @@ class _OnePokemon extends ConsumerWidget {
                           if(ref.watch(appStateProvider).pokemoney > 9){
                             showDialog(context: context, builder: (contect)=>AlertDialog(
                             title: Text('Achat effectué'),
-                            content: Text("Vous venez d'acheter un Pokemon"),
+                            content: Text("Vous venez d'acheter un Pokémon"),
                             actions: [
                               TextButton(
                                 onPressed: (){
