@@ -18,13 +18,43 @@ class HomeAppBar extends ConsumerWidget implements PreferredSizeWidget{
               Text(ref.watch(appStateProvider).pokemoney.toString(),
               style:TextStyle(fontFamily: 'Montserrat', fontSize:20, color: (Colors.white)),
               ),
-
+              Padding(
+                padding: EdgeInsets.only(left: 20.0), 
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.black, 
+                ),
+              child: Icon(Icons.settings),
+              onPressed: () {
+                _navigateToNextScreen(context);
+              })),
             ],
+
           ),
       )
       ;
   }
-
   @override
   Size get preferredSize => const Size.fromHeight(64);
+
+  void _navigateToNextScreen(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => NewScreen()));
+  }
+}
+
+
+class NewScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Paramètres')),
+      body: Center(
+        child: Text(
+          'Vous êtes sur la page paramètres en cours de modification',
+          style: TextStyle(fontSize: 24.0),
+        ),
+      ),
+    );
+  }
+  
 }
